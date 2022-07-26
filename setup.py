@@ -10,12 +10,12 @@ extras_require = {
         "hypothesis>=6.2.0,<7.0",  # Strategy-based fuzzer
     ],
     "lint": [
-        "black>=21.12b0,<22.0",  # auto-formatter and linter
-        "mypy>=0.910,<1.0",  # Static type analyzer
-        "flake8>=3.9.2,<4.0",  # Style linter
+        "black>=22.3.0,<23.0",  # auto-formatter and linter
+        "mypy>=0.971,<1.0",  # Static type analyzer
+        "flake8>=4.0.1,<5.0",  # Style linter
         "flake8-breakpoint>=1.1.0,<2.0.0",  # detect breakpoints left in code
         "flake8-print>=4.0.0,<5.0.0",  # detect print statements left in code
-        "isort>=5.9.3,<6.0",  # Import sorting linter
+        "isort>=5.10.1,<6.0",  # Import sorting linter
     ],
     "release": [  # `release` GitHub Action job uses this
         "setuptools",  # Installation tool
@@ -47,7 +47,7 @@ setup(
     name="ape-chainstack",
     use_scm_version=True,
     setup_requires=["setuptools_scm"],
-    description="""ape-chainstack: <SHORT_DESCRIPTION>""",
+    description="""ape-chainstack: Ape Ecosystem Plugin for Chainstack""",
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="ApeWorX Ltd.",
@@ -57,7 +57,7 @@ setup(
     install_requires=[
         "importlib-metadata ; python_version<'3.8'",
     ],  # NOTE: Add 3rd party libraries here
-    python_requires=">=3.7,<4",
+    python_requires=">=3.7.2,<3.11",
     extras_require=extras_require,
     py_modules=["ape_chainstack"],
     license="Apache-2.0",
@@ -66,7 +66,7 @@ setup(
     packages=find_packages(exclude=["tests", "tests.*"]),
     package_data={"ape_chainstack": ["py.typed"]},
     classifiers=[
-        "Development Status :: 4 - Beta",
+        "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: Apache Software License",
         "Natural Language :: English",
@@ -76,5 +76,6 @@ setup(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
     ],
 )
