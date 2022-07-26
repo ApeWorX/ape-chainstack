@@ -32,6 +32,7 @@ Use in most commands using the `--network` option:
 
 ```bash
 ape console --network ethereum:ropsten:chainstack
+```
 
 ## Development
 
