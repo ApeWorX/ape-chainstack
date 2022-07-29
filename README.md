@@ -109,7 +109,7 @@ Follow these steps to sign up on Chainstack, deploy a node, and find your endpoi
 Create an environment variable with your Chainstack node URL in this format `CHAINSTACK_"NETWORK"_URL=ENDPOINT_URL`; for example:
 
 ```sh
-CHAINSTACK_GOERLI_URL=https://nd-11X-26X-16X.p2pify.com/YOUR_API_KEY
+export CHAINSTACK_GOERLI_URL=https://nd-11X-26X-16X.p2pify.com/YOUR_API_KEY
 ```
 
 Use the command `ape networks list` to see the networks available:
