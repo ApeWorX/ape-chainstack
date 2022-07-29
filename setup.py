@@ -52,7 +52,7 @@ setup(
     long_description_content_type="text/markdown",
     author="ApeWorX Ltd.",
     author_email="admin@apeworx.io",
-    url="https://github.com/ApeWorX/<REPO_NAME>",
+    url="https://github.com/soos3d/ape-chainstack",
     include_package_data=True,
     install_requires=[
         "importlib-metadata ; python_version<'3.8'",
