@@ -44,7 +44,7 @@ with open("./README.md") as readme:
 
 
 setup(
-    name="ape-chainstack",
+    name="chainstack-ape",
     use_scm_version=True,
     setup_requires=["setuptools_scm"],
     description="""ape-chainstack: Ape Ecosystem Plugin for Chainstack""",
