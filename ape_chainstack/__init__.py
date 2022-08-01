@@ -1,6 +1,6 @@
 from ape import plugins
 
-from .providers import Chainstack
+from .providers import ETH_NETWORKS, Chainstack
 
 
 @plugins.register(plugins.ProviderPlugin)

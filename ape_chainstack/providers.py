@@ -93,4 +93,3 @@ class Chainstack(Web3Provider):
                 return ContractLogicError()
 
         return VirtualMachineError(message=message)
-    

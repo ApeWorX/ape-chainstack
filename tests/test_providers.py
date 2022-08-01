@@ -20,4 +20,3 @@ def test_when_no_api_key_raises_error():
 
     expected = "Missing environment variable 'CHAINSTACK_MAINNET_URL'"
     assert expected in str(err.value)
-    

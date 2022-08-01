@@ -22,4 +22,3 @@ def runner():
 @pytest.fixture
 def cli():
     return ape_cli
-  
