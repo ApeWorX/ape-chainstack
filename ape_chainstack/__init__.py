@@ -1,6 +1,6 @@
 from ape import plugins
 
-from .providers import Chainstack
+from .provider import Chainstack
 
 ETH_NETWORKS = [
     "mainnet",
