@@ -1,12 +1,6 @@
 from ape import plugins
 
-from .provider import Chainstack
-
-ETH_NETWORKS = [
-    "mainnet",
-    "ropsten",
-    "rinkeby",
-]
+from .providers import Chainstack
 
 
 @plugins.register(plugins.ProviderPlugin)
