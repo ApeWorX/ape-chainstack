@@ -10,7 +10,6 @@ ETH_NETWORKS = [
     "mainnet",
     "ropsten",
     "rinkeby",
-    "kovan",
     "goerli",
 ]
 
