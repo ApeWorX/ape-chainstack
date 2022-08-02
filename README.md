@@ -1,14 +1,73 @@
 # Ape Chainstack Plugin
 
-Chainstack Provider plugins for networks
+Chainstack provider plugins for networks.
 
-## Dependencies
+This plugin allows using the ApeWorX framework with Chainstack as a node provider in an easy and integrated way.
 
-* [python3](https://www.python.org/downloads) version 3.7.2 or greater, python3-dev
+ApeWorX is an innovative smart contract development and testing framework.
+It is inspired by Brownie, and it has essentially the same syntax.
+Still, ApeworX focuses on a more modular approach, allowing us to build and use external plugins to add functionality.
+
+## Table of contents
+
+- [Ape Chainstack Plugin](#ape-chainstack-plugin)
+  - [Requirements](#requirements)
+    - [Dependencies](#dependencies)
+  - [Installation](#installation)
+    - [Virtual environment](#virtual-environment)
+    - [Install ape-chainstack via `pip`](#install-ape-chainstack-via-pip)
+    - [Install ape-chainstack via `setuptools`](#install-ape-chainstack-via-setuptools)
+  - [Quick Usage](#quick-usage)
+  - [Development](#development)
+  - [License](#license)
+
+## Requirements
+
+- Linux or macOS
+- Windows Subsystem Linux ([WSL](https://docs.microsoft.com/en-us/windows/wsl/install)) if operating on windows.
+
+### Dependencies
+
+- [python3](https://www.python.org/downloads) version 3.7.2 or greater
+- python3-dev
+
+  - MacOS. Should already have the [correct headers if Python is installed with `brew`](https://stackoverflow.com/questions/32578106/how-to-install-python-devel-in-mac-os)
+
+  - Linux. Install python3-dev with:
+
+  ```sh
+  sudo apt-get install python3-dev
+  ```
+
+> **Note:** Always check the [ApeWorX docs to find the updated requirements](https://docs.apeworx.io/ape/stable/userguides/quickstart.html#prerequisite).
 
 ## Installation
 
-### via `pip`
+Verify the Python version installed:
+
+```sh
+Python3 --version
+```
+
+### Virtual environment
+
+It is recommended to operate in a virtual environment; you will need to [install ApeWorX](https://github.com/ApeWorX/ape#installation) in the virtual environment if you decide to use one.
+
+Create a virtual environment.
+
+```sh
+python3 -m venv /path/to/new/environment
+```
+
+> Keep in mind that you can place the virtual environment where you prefer.
+
+Then activate it.
+
+```sh
+source /bin/activate
+```
+
+### Install ape-chainstack via `pip`
 
 You can install the latest release via [`pip`](https://pypi.org/project/pip/):
 
@@ -16,7 +75,7 @@ You can install the latest release via [`pip`](https://pypi.org/project/pip/):
 pip install ape-chainstack
 ```
 
-### via `setuptools`
+### Install ape-chainstack via `setuptools`
 
 You can clone the repository and use [`setuptools`](https://github.com/pypa/setuptools) for the most up-to-date version:
 
@@ -26,13 +85,71 @@ cd ape-chainstack
 python3 setup.py install
 ```
 
-## Quick Usage
-
-Use in most commands using the `--network` option:
+Verify that the Chainstack plugin was installed correctly with this command:
 
 ```bash
-ape console --network ethereum:ropsten:chainstack
+ape plugins list
 ```
+
+It will show a list of all the plugins installed, and Chainstack will be there.
+
+```bash
+Installed Plugins:
+  chainstack    0.1.0a2.dev7+gc039b8e.d20220727
+```
+
+## Quick Usage
+
+Follow these steps to sign up on Chainstack, deploy a node, and find your endpoint credentials:
+
+1. [Sign up with Chainstack](https://console.chainstack.com/user/account/create).
+1. [Deploy a node](https://docs.chainstack.com/platform/join-a-public-network).
+1. [View node access and credentials](https://docs.chainstack.com/platform/view-node-access-and-credentials).
+
+> **Note:** At this moment only the Ethereum network is supported.
+
+Create an environment variable with your Chainstack node URL in this format `CHAINSTACK_"NETWORK"_URL=ENDPOINT_URL`; for example:
+
+```sh
+export CHAINSTACK_GOERLI_URL=https://nd-11X-26X-16X.p2pify.com/YOUR_API_KEY
+```
+
+Use the command `ape networks list` to see the networks available:
+
+```sh
+ethereum  (default)
+├── mainnet
+│   ├── geth  (default)
+│   └── chainstack
+├── ropsten
+│   ├── geth  (default)
+│   └── chainstack
+├── kovan
+│   └── geth  (default)
+├── rinkeby
+│   ├── geth  (default)
+│   └── chainstack
+├── goerli
+│   ├── geth  (default)
+│   └── chainstack
+└── local  (default)
+    ├── geth
+    └── test  (default)
+```
+
+Use the `--network` command to access the console using your node; for example:
+
+```bash
+ape console --network ethereum:goerli:chainstack
+```
+
+This is a list and syntax of the networks available once you install the Chainstack plugin.
+
+```bash
+':mainnet:geth', 'ethereum:mainnet:geth', ':mainnet:chainstack', 'ethereum:mainnet:chainstack', ':mainnet', 'ethereum:mainnet', ':ropsten:geth', 'ethereum:ropsten:geth', ':ropsten:chainstack', 'ethereum:ropsten:chainstack', ':ropsten', 'ethereum:ropsten', ':kovan:geth', 'ethereum:kovan:geth', ':kovan', 'ethereum:kovan', ':rinkeby:geth', 'ethereum:rinkeby:geth', ':rinkeby:chainstack', 'ethereum:rinkeby:chainstack', ':rinkeby', 'ethereum:rinkeby', ':goerli:geth', 'ethereum:goerli:geth', ':goerli:chainstack', 'ethereum:goerli:chainstack', ':goerli', 'ethereum:goerli', '::geth', 'ethereum:local:geth', '::test', 'ethereum:local:test', ':local', 'ethereum:local', 'ethereum'.
+```
+
+Now you are ready to use ApeWorX to develop and test your smart contract, checkout the [Ape Academy](https://academy.apeworx.io/) for tutorials.
 
 ## Development
 
