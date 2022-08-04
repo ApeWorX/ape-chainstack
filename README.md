@@ -39,7 +39,7 @@ Still, Ape focuses on a more modular approach, allowing us to build and use exte
   sudo apt-get install python3-dev
   ```
 
-> **Note:** Always check the [ApeWorX docs to find the updated requirements](https://docs.apeworx.io/ape/stable/userguides/quickstart.html#prerequisite).
+> **Note:** Always check the [Ape docs to find the updated requirements](https://docs.apeworx.io/ape/stable/userguides/quickstart.html#prerequisite).
 
 ## Installation
 
