@@ -51,7 +51,7 @@ Python3 --version
 
 ### Virtual environment
 
-It is recommended to operate in a virtual environment; you will need to [install ApeWorX](https://github.com/ApeWorX/ape#installation) in the virtual environment if you decide to use one.
+It is recommended to operate in a virtual environment; you will need to [install Ape](https://github.com/ApeWorX/ape#installation) in the virtual environment if you decide to use one.
 
 Create a virtual environment.
 
