@@ -149,7 +149,7 @@ This is a list and syntax of the networks available once you install the Chainst
 ':mainnet:geth', 'ethereum:mainnet:geth', ':mainnet:chainstack', 'ethereum:mainnet:chainstack', ':mainnet', 'ethereum:mainnet', ':ropsten:geth', 'ethereum:ropsten:geth', ':ropsten:chainstack', 'ethereum:ropsten:chainstack', ':ropsten', 'ethereum:ropsten', ':kovan:geth', 'ethereum:kovan:geth', ':kovan', 'ethereum:kovan', ':rinkeby:geth', 'ethereum:rinkeby:geth', ':rinkeby:chainstack', 'ethereum:rinkeby:chainstack', ':rinkeby', 'ethereum:rinkeby', ':goerli:geth', 'ethereum:goerli:geth', ':goerli:chainstack', 'ethereum:goerli:chainstack', ':goerli', 'ethereum:goerli', '::geth', 'ethereum:local:geth', '::test', 'ethereum:local:test', ':local', 'ethereum:local', 'ethereum'.
 ```
 
-Now you are ready to use ApeWorX to develop and test your smart contract, checkout the [Ape Academy](https://academy.apeworx.io/) for tutorials.
+Now you are ready to use Ape to develop and test your smart contract, checkout the [Ape Academy](https://academy.apeworx.io/) for tutorials.
 
 ## Development
 
