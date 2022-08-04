@@ -1,6 +1,6 @@
 # Ape Chainstack Plugin
 
-Chainstack provider plugins for networks.
+Chainstack network provider plugins.
 
 This plugin allows using the Ape framework with Chainstack as a node provider in an easy and integrated way.
 
