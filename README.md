@@ -143,11 +143,7 @@ Use the `--network` command to access the console using your node; for example:
 ape console --network ethereum:goerli:chainstack
 ```
 
-This is a list and syntax of the networks available once you install the Chainstack plugin.
-
-```bash
-':mainnet:geth', 'ethereum:mainnet:geth', ':mainnet:chainstack', 'ethereum:mainnet:chainstack', ':mainnet', 'ethereum:mainnet', ':ropsten:geth', 'ethereum:ropsten:geth', ':ropsten:chainstack', 'ethereum:ropsten:chainstack', ':ropsten', 'ethereum:ropsten', ':kovan:geth', 'ethereum:kovan:geth', ':kovan', 'ethereum:kovan', ':rinkeby:geth', 'ethereum:rinkeby:geth', ':rinkeby:chainstack', 'ethereum:rinkeby:chainstack', ':rinkeby', 'ethereum:rinkeby', ':goerli:geth', 'ethereum:goerli:geth', ':goerli:chainstack', 'ethereum:goerli:chainstack', ':goerli', 'ethereum:goerli', '::geth', 'ethereum:local:geth', '::test', 'ethereum:local:test', ':local', 'ethereum:local', 'ethereum'.
-```
+Check the Ape docs to see [how to select a network](https://docs.apeworx.io/ape/stable/userguides/networks.html).
 
 Now you are ready to use Ape to develop and test your smart contract, checkout the [Ape Academy](https://academy.apeworx.io/) for tutorials.
 
