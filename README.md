@@ -4,7 +4,7 @@ Chainstack provider plugins for networks.
 
 This plugin allows using the Ape framework with Chainstack as a node provider in an easy and integrated way.
 
-ApeWorX is an innovative smart contract development and testing framework.
+Ape is an innovative smart contract development and testing framework.
 It is inspired by Brownie, and it has essentially the same syntax.
 Still, Ape focuses on a more modular approach, allowing us to build and use external plugins to add functionality.
 
