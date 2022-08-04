@@ -95,7 +95,7 @@ It will show a list of all the plugins installed, and Chainstack will be there.
 
 ```bash
 Installed Plugins:
-  chainstack    0.1.0a2.dev7+gc039b8e.d20220727
+  chainstack    <current version number>
 ```
 
 ## Quick Usage
