@@ -1,7 +1,7 @@
 import pytest
 from ape import networks
 
-from ape_chainstack.providers import Chainstack, ChainstackProviderError
+from ape_chainstack.providers import ChainstackProvider, ChainstackProviderError
 
 
 @pytest.mark.skip("Wait until CI env is setup")
@@ -9,7 +9,7 @@ def test_provider_ropsten():
     # NOTE: env running test must have a key set for the network
     # EXAMPLE: CHAINSTACK_ROPSTEN_URL=https://<address here>.com/<key>
     with networks.ethereum.ropsten.use_provider("chainstack") as provider:
-        assert isinstance(provider, Chainstack)
+        assert isinstance(provider, ChainstackProvider)
         assert provider.get_balance("0x0000000000000000000000000000000000000000") > 0
 
 
