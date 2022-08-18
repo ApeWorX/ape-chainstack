@@ -7,7 +7,6 @@ from web3.exceptions import ContractLogicError as Web3ContractLogicError
 from web3.middleware import geth_poa_middleware
 
 
-
 class ChainstackProviderError(ProviderError):
     """
     An error raised in the Chainstack ape provider plugin.
@@ -84,3 +83,4 @@ class ChainstackProvider(Web3Provider):
                 return ContractLogicError()
 
         return VirtualMachineError(message=message)
+
