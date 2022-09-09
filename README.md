@@ -1,4 +1,4 @@
-# Ape Chainstack Plugin
+# Quick Start
 
 Chainstack network provider plugins.
 
@@ -28,7 +28,7 @@ Still, Ape focuses on a more modular approach, allowing us to build and use exte
 
 ### Dependencies
 
-- [python3](https://www.python.org/downloads) version 3.7.2 or greater
+- [python3](https://www.python.org/downloads) version 3.8 or greater
 - python3-dev
 
   - MacOS. Should already have the [correct headers if Python is installed with `brew`](https://stackoverflow.com/questions/32578106/how-to-install-python-devel-in-mac-os)
@@ -152,7 +152,3 @@ Now you are ready to use Ape to develop and test your smart contract, checkout t
 This project is in development and should be considered a beta.
 Things might not be in their final state and breaking changes may occur.
 Comments, questions, criticisms and pull requests are welcomed.
-
-## License
-
-This project is licensed under the [Apache 2.0](LICENSE).
