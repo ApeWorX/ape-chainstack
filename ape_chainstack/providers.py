@@ -6,15 +6,6 @@ from web3 import HTTPProvider, Web3
 from web3.exceptions import ContractLogicError as Web3ContractLogicError
 from web3.middleware import geth_poa_middleware
 
-ETH_NETWORKS = [
-    "mainnet",
-    "ropsten",
-    "rinkeby",
-    "goerli",
-]
-
-_ENVIRONMENT_VARIABLE_NAMES = [f"CHAINSTACK_{network.upper()}_URL" for network in ETH_NETWORKS]
-
 
 class ChainstackProviderError(ProviderError):
     """
@@ -22,7 +13,7 @@ class ChainstackProviderError(ProviderError):
     """
 
 
-class Chainstack(Web3Provider):
+class ChainstackProvider(Web3Provider):
     """
     A simple implementation for the ProviderAPI for using Chainstack in ape.
     https://chainstack.com/
@@ -35,7 +26,7 @@ class Chainstack(Web3Provider):
         Each Chainstack node runs a single networks.
         """
 
-        env_var_key = f"CHAINSTACK_{self.network.name.upper()}_URL"
+        env_var_key = f"CHAINSTACK_{self.ecosystem.name.upper()}_{self.network.name.upper()}_URL"
         env_var = os.getenv(env_var_key)
         if not env_var:
             raise ChainstackProviderError(f"Missing environment variable '{env_var_key}'")
@@ -48,7 +39,7 @@ class Chainstack(Web3Provider):
         """
 
         self._web3 = Web3(HTTPProvider(self.url))
-        if self._web3.eth.chain_id in (4, 5, 42):
+        if self._web3.eth.chain_id in (1, 4, 5, 42, 137, 80001):
             self._web3.middleware_onion.inject(geth_poa_middleware, layer=0)
 
         return super().connect()
@@ -92,3 +83,4 @@ class Chainstack(Web3Provider):
                 return ContractLogicError()
 
         return VirtualMachineError(message=message)
+
