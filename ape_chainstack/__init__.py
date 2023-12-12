@@ -1,9 +1,11 @@
 from ape import plugins
 
-from .providers import ETH_NETWORKS, Chainstack
+from .providers import Chainstack
+from .utils import NETWORKS
 
 
 @plugins.register(plugins.ProviderPlugin)
 def providers():
-    for network_name in ETH_NETWORKS:
-        yield "ethereum", network_name, Chainstack
+    for ecosystem_name in NETWORKS:
+        for network_name in NETWORKS[ecosystem_name]:
+            yield ecosystem_name, network_name, Chainstack

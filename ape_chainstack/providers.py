@@ -1,19 +1,14 @@
 import os
 
-from ape.api import Web3Provider
 from ape.exceptions import ContractLogicError, ProviderError, VirtualMachineError
+from ape_ethereum.provider import Web3Provider
 from web3 import HTTPProvider, Web3
 from web3.exceptions import ContractLogicError as Web3ContractLogicError
 from web3.middleware import geth_poa_middleware
 
-ETH_NETWORKS = [
-    "mainnet",
-    "ropsten",
-    "rinkeby",
-    "goerli",
-]
+from .utils import NETWORKS
 
-_ENVIRONMENT_VARIABLE_NAMES = [f"CHAINSTACK_{network.upper()}_URL" for network in ETH_NETWORKS]
+_ENVIRONMENT_VARIABLE_NAMES = [f"CHAINSTACK_{network.upper()}_URL" for network in NETWORKS]
 
 
 class ChainstackProviderError(ProviderError):
@@ -61,7 +56,7 @@ class Chainstack(Web3Provider):
         self._web3 = None
         return super().disconnect()
 
-    def get_virtual_machine_error(self, exception: Exception) -> VirtualMachineError:
+    def get_virtual_machine_error(self, exception: Exception, **kwargs) -> VirtualMachineError:
         if not hasattr(exception, "args") or not len(exception.args):
             return VirtualMachineError(base_err=exception)
 
