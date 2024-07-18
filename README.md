@@ -51,17 +51,17 @@ Use the command `ape networks list` to see the networks available:
 ```sh
 ethereum  (default)
 ├── holesky
-│   ├── node  (default)
-│   └── chainstack
+│   ├── chainstack
+│   └── node  (default)
 ├── local  (default)
 │   ├── node
 │   └── test  (default)
 ├── mainnet
-│   ├── node  (default)
-│   └── chainstack
+│   ├── chainstack
+│   └── node  (default)
 └── sepolia
-    ├── node  (default)
-    └── chainstack
+    ├── chainstack
+    └── node  (default)
 ```
 
 Use the `--network` command to access the console using your node; for example:
