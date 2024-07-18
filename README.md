@@ -15,7 +15,7 @@ This plugin allows using the Ape framework with Chainstack as a node provider in
 You can install the latest release via [`pip`](https://pypi.org/project/pip/):
 
 ```bash
-pip install ape-etherscan
+pip install ape-chainstack
 ```
 
 ### via `setuptools`
