@@ -49,13 +49,25 @@ export CHAINSTACK_GOERLI_URL=https://nd-11X-26X-16X.p2pify.com/YOUR_API_KEY
 Use the command `ape networks list` to see the networks available:
 
 ```sh
-
+ethereum  (default)
+├── holesky
+│   ├── node  (default)
+│   └── chainstack
+├── local  (default)
+│   ├── node
+│   └── test  (default)
+├── mainnet
+│   ├── node  (default)
+│   └── chainstack
+└── sepolia
+    ├── node  (default)
+    └── chainstack
 ```
 
 Use the `--network` command to access the console using your node; for example:
 
 ```bash
-ape console --network 
+ape console --network ethereum:sepolia:chainstack
 ```
 
 Check the Ape docs to see [how to select a network](https://docs.apeworx.io/ape/stable/userguides/networks.html).
