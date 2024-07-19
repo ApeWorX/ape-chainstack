@@ -72,3 +72,8 @@ ape console --network ethereum:sepolia:chainstack
 Check the Ape docs to see [how to select a network](https://docs.apeworx.io/ape/stable/userguides/networks.html).
 
 Now you are ready to use Ape to develop and test your smart contract, checkout the [Ape Academy](https://academy.apeworx.io/) for tutorials.
+
+## Development
+
+This project is in development and should be considered a beta.
+Things might not be in their final state and breaking changes may occur.
