@@ -4,7 +4,11 @@ from ape.exceptions import ContractLogicError, ProviderError, VirtualMachineErro
 from ape_ethereum.provider import Web3Provider
 from web3 import HTTPProvider, Web3
 from web3.exceptions import ContractLogicError as Web3ContractLogicError
-from web3.middleware import geth_poa_middleware
+
+try:
+    from web3.middleware import ExtraDataToPOAMiddleware  # type: ignore
+except ImportError:
+    from web3.middleware import geth_poa_middleware as ExtraDataToPOAMiddleware  # type: ignore
 
 from .utils import NETWORKS
 
@@ -44,7 +48,7 @@ class Chainstack(Web3Provider):
 
         self._web3 = Web3(HTTPProvider(self.url))
         if self._web3.eth.chain_id in (4, 5, 42):
-            self._web3.middleware_onion.inject(geth_poa_middleware, layer=0)
+            self._web3.middleware_onion.inject(ExtraDataToPOAMiddleware, layer=0)
 
         return super().connect()
 
