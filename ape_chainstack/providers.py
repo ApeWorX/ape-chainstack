@@ -70,7 +70,7 @@ class Chainstack(Web3Provider):
             # Is some other VM error, like gas related
             return VirtualMachineError(message=message["message"])
 
-        elif not isinstance(message, str):
+        if not isinstance(message, str):
             return VirtualMachineError(base_err=exception)
 
         # If get here, we have detected a contract logic related revert.
@@ -82,8 +82,7 @@ class Chainstack(Web3Provider):
                 # Was given a revert message
                 message = message.split(":")[-1].strip()
                 return ContractLogicError(revert_message=message)
-            else:
-                # No revert message
-                return ContractLogicError()
+            # No revert message
+            return ContractLogicError()
 
         return VirtualMachineError(message=message)
