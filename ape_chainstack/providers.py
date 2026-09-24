@@ -56,7 +56,7 @@ class Chainstack(Web3Provider):
         self._web3 = None
         return super().disconnect()
 
-    def get_virtual_machine_error(self, exception: Exception, **kwargs) -> VirtualMachineError:
+    def get_virtual_machine_error(self, exception: Exception, **kwargs) -> VirtualMachineError:  # noqa: ARG002
         if not hasattr(exception, "args") or not len(exception.args):
             return VirtualMachineError(base_err=exception)
 
