@@ -1,5 +1,3 @@
-from typing import Dict, List
-
 API_KEY_ENV_KEY_MAP = {
     "avalanche": "AVALANCHE_CHAINSTACK_API_KEY",
     "arbitrum": "ARBITRUM_CHAINSTACK_API_KEY",
@@ -11,7 +9,7 @@ API_KEY_ENV_KEY_MAP = {
     "bsc": "BSC_CHAINSTACK_API_KEY",
 }
 
-NETWORKS: Dict[str, List[str]] = {
+NETWORKS: dict[str, list[str]] = {
     "avalanche": ["mainnet", "fuji"],
     "arbitrum": ["mainnet", "sepolia"],
     "base": ["mainnet", "sepolia"],
