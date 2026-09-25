@@ -35,8 +35,8 @@ python3 setup.py install
 Follow these steps to sign up on Chainstack, deploy a node, and find your endpoint credentials:
 
 1. [Sign up with Chainstack](https://console.chainstack.com/user/account/create).
-1. [Deploy a node](https://docs.chainstack.com/platform/join-a-public-network).
-1. [View node access and credentials](https://docs.chainstack.com/platform/view-node-access-and-credentials).
+2. [Deploy a node](https://docs.chainstack.com/platform/join-a-public-network).
+3. [View node access and credentials](https://docs.chainstack.com/platform/view-node-access-and-credentials).
 
 Create an environment variable with your Chainstack node URL in this format `CHAINSTACK_"NETWORK"_URL=ENDPOINT_URL`; for example:
 
