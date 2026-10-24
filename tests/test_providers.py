@@ -14,9 +14,11 @@ def test_provider_ropsten():
 
 
 def test_when_no_api_key_raises_error():
-    with pytest.raises(ChainstackProviderError) as err:
-        with networks.ethereum.mainnet.use_provider("chainstack"):
-            pass
+    with (
+        pytest.raises(ChainstackProviderError) as err,
+        networks.ethereum.mainnet.use_provider("chainstack"),
+    ):
+        pass
 
     expected = "Missing environment variable 'CHAINSTACK_MAINNET_URL'"
     assert expected in str(err.value)

@@ -4,7 +4,13 @@ from ape.exceptions import ContractLogicError, ProviderError, VirtualMachineErro
 from ape_ethereum.provider import Web3Provider
 from web3 import HTTPProvider, Web3
 from web3.exceptions import ContractLogicError as Web3ContractLogicError
-from web3.middleware import geth_poa_middleware
+
+try:
+    from web3.middleware import ExtraDataToPOAMiddleware  # type: ignore
+except ImportError:
+    from web3.middleware import (
+        ExtraDataToPOAMiddleware as ExtraDataToPOAMiddleware,  # type: ignore  # noqa: N812
+    )
 
 from .utils import NETWORKS
 
@@ -44,7 +50,7 @@ class Chainstack(Web3Provider):
 
         self._web3 = Web3(HTTPProvider(self.url))
         if self._web3.eth.chain_id in (4, 5, 42):
-            self._web3.middleware_onion.inject(geth_poa_middleware, layer=0)
+            self._web3.middleware_onion.inject(ExtraDataToPOAMiddleware, layer=0)
 
         return super().connect()
 
@@ -56,7 +62,7 @@ class Chainstack(Web3Provider):
         self._web3 = None
         return super().disconnect()
 
-    def get_virtual_machine_error(self, exception: Exception, **kwargs) -> VirtualMachineError:
+    def get_virtual_machine_error(self, exception: Exception, **kwargs) -> VirtualMachineError:  # noqa: ARG002
         if not hasattr(exception, "args") or not len(exception.args):
             return VirtualMachineError(base_err=exception)
 
@@ -70,7 +76,7 @@ class Chainstack(Web3Provider):
             # Is some other VM error, like gas related
             return VirtualMachineError(message=message["message"])
 
-        elif not isinstance(message, str):
+        if not isinstance(message, str):
             return VirtualMachineError(base_err=exception)
 
         # If get here, we have detected a contract logic related revert.
@@ -82,8 +88,7 @@ class Chainstack(Web3Provider):
                 # Was given a revert message
                 message = message.split(":")[-1].strip()
                 return ContractLogicError(revert_message=message)
-            else:
-                # No revert message
-                return ContractLogicError()
+            # No revert message
+            return ContractLogicError()
 
         return VirtualMachineError(message=message)
